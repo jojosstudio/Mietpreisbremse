@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung – Mietpreisbremse Verstehen (Die Endlose Version)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Variables (Apple-like & organic fusion) --- */
+        :root {
+            --apple-bg-light: #f5f5f7; /* Very light, almost white background */
+            --apple-text-dark: #1d1d1f; /* Dark text for clarity */
+            --apple-blue: #007aff; /* Apple's signature blue */
+            --apple-gray-text: #6e6e73; /* Standard secondary text gray */
+            --apple-gray-light: #d2d2d7; /* Lighter gray for borders/dividers */
+
+            --primary-accent: #3f51b5; /* Our primary blue for strong highlights */
+            --secondary-accent: #673ab7; /* Our secondary violet for playful elements */
+            --gold-accent: #ffc107; /* Warm accent for special buttons */
+            --white: #ffffff; /* Explicitly define white */
+
+            --border-radius-apple: 12px; /* Apple-like subtle rounded corners */
+            --border-radius-card-organic: 24px; /* More rounded for main sections, organic feel */
+            --shadow-subtle: 0 4px 15px rgba(0,0,0,0.05); /* Very light shadow */
+            --shadow-pop: 0 10px 30px rgba(0,0,0,0.1); /* More pronounced shadow for interactive elements */
+        }
+
+        /* --- Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Open Sans', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--apple-bg-light);
+            color: var(--apple-text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Aligned to top for long content */
+            overflow-x: hidden;
+        }
+        
+        /* General content container (page-container remains same as main site) */
+        .page-container {
+            background: var(--white);
+            border-radius: var(--border-radius-card-organic);
+            overflow: hidden;
+            box-shadow: var(--shadow-pop);
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Header (Adapted for privacy page) --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
+            color: var(--white);
+            padding: 2.5em 0;
+            text-align: center;
+            box-shadow: var(--shadow-pop);
+            border-bottom-left-radius: var(--border-radius-apple);
+            border-bottom-right-radius: var(--border-radius-apple);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.2em; /* Slightly smaller than homepage for subtlety */
+            margin: 0;
+            color: var(--white);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            animation: fadeInScale 1s ease-out forwards;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 1.2s ease-out 0.5s forwards;
+            font-weight: 300;
+            color: var(--white);
+        }
+
+        header::before { /* Organic shape from main header */
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 180px;
+            height: 180px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(40px);
+            animation: floatBlob 12s ease-in-out infinite alternate;
+        }
+
+        /* --- Main Content Area for Privacy Policy --- */
+        .privacy-content {
+            padding: 3em;
+            color: var(--apple-text-dark);
+        }
+
+        .privacy-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            color: var(--primary-accent); /* Main accent for section titles */
+            margin-bottom: 0.8em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--apple-gray-light);
+            position: relative;
+            animation: fadeInRight 1s ease-out forwards;
+            letter-spacing: -0.02em;
+        }
+        .privacy-content h2::after { /* Playful dot */
+            content: '';
+            width: 14px;
+            height: 14px;
+            background-color: var(--gold-accent);
+            border-radius: 50%;
+            position: absolute;
+            right: -20px;
+            bottom: -7px;
+            box-shadow: 0 0 8px var(--gold-accent);
+        }
+
+        .privacy-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: var(--apple-text-dark);
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            position: relative;
+            padding-left: 25px; /* Indent for accent line */
+        }
+        .privacy-content h3::before { /* Left accent line */
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 25px;
+            width: 6px;
+            background: var(--apple-blue);
+            border-radius: 3px;
+        }
+
+        .privacy-content p {
+            margin-bottom: 1.2em;
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: var(--apple-gray-text);
+        }
+
+        .privacy-content ul {
+            list-style: none; /* Custom list style */
+            padding-left: 0;
+            margin-bottom: 1.5em;
+        }
+
+        .privacy-content ul li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 0.8em;
+            font-size: 1em;
+            color: var(--apple-gray-text);
+        }
+
+        .privacy-content ul li::before { /* Custom bullet point */
+            content: '\2022'; /* Unicode bullet */
+            font-size: 1.2em;
+            color: var(--secondary-accent); /* Playful color for bullets */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        .privacy-content a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .privacy-content a:hover {
+            color: var(--primary-accent);
+            text-decoration: underline;
+        }
+
+        /* Accordion for long sections (optional, but good for "endless" content) */
+        details {
+            background-color: var(--white);
+            border: 1px solid var(--apple-gray-light);
+            border-radius: var(--border-radius-apple);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            box-shadow: var(--shadow-pop);
+            transform: translateY(-2px);
+        }
+
+        summary {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 20px 28px;
+            cursor: pointer;
+            outline: none;
+            color: var(--apple-text-dark);
+            list-style: none;
+            position: relative;
+            font-size: 1.15em;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after { /* Apple-like chevron */
+            content: '\f078'; /* Font Awesome chevron-down */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.3s ease;
+            font-size: 0.9em;
+            color: var(--apple-gray-text);
+        }
+
+        details[open] summary::after {
+            transform: translateY(-50%) rotate(180deg);
+            color: var(--apple-blue);
+        }
+
+        details p {
+            padding: 10px 28px 25px 28px;
+            border-top: 1px dashed var(--apple-gray-light);
+            margin: 0;
+            color: var(--apple-gray-text);
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        /* Return to Homepage Button */
+        .back-to-home {
+            text-align: center;
+            margin: 3em 0 2em;
+        }
+        .back-to-home .button-apple-style {
+            background-color: var(--primary-accent);
+            color: var(--white);
+            padding: 1em 2.5em;
+            font-size: 1.1em;
+            border-radius: var(--border-radius-apple);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-subtle);
+        }
+        .back-to-home .button-apple-style:hover {
+            background-color: var(--secondary-accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-pop);
+        }
+
+        /* --- Footer (same as main site) --- */
+        footer {
+            background-color: var(--apple-bg-light);
+            color: var(--apple-gray-text);
+            text-align: center;
+            padding: 2em 0;
+            margin-top: 3em; /* No margin-bottom, as it's the end */
+            border-top-left-radius: var(--border-radius-apple);
+            border-top-right-radius: var(--border-radius-apple);
+            box-shadow: var(--shadow-subtle);
+            border-top: 1px solid var(--apple-gray-light);
+        }
+
+        footer nav ul {
+            margin-bottom: 1em;
+        }
+        footer nav ul li {
+            display: inline-block; /* Inline-block for horizontal links */
+            margin: 0 15px;
+        }
+        footer nav ul li a {
+            color: var(--apple-gray-text);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+        }
+        footer nav ul li a:hover {
+            color: var(--apple-text-dark);
+            border-bottom: 2px solid var(--apple-blue);
+            transform: translateY(-1px);
+        }
+
+        /* --- Keyframe Animations --- */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInFromTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, 15px) rotate(10deg); }
+            50% { transform: translate(0, 30px) rotate(0deg); }
+            75% { transform: translate(-20px, 15px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+        @media (max-width: 992px) {
+            header h1 { font-size: 2.8em; }
+            .privacy-content h2 { font-size: 2.4em; }
+            .privacy-content h3 { font-size: 1.6em; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .page-container { padding: 0; }
+            header { padding: 2em 0; }
+            header h1 { font-size: 2.2em; }
+            header p { font-size: 1em; }
+            .privacy-content { padding: 2em; }
+            .privacy-content h2 { font-size: 2em; }
+            .privacy-content h3 { font-size: 1.4em; padding-left: 20px; }
+            .privacy-content h3::before { height: 20px; width: 5px; }
+            .privacy-content p, .privacy-content ul li, details p { font-size: 0.95em; }
+            summary { padding: 16px 20px; font-size: 1em; }
+            summary::after { right: 20px; font-size: 0.8em; }
+            footer nav ul li { margin: 0 10px; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.8em; }
+            .privacy-content h2 { font-size: 1.6em; }
+            .privacy-content h3 { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <header>
+            <h1>Datenschutz bei Mietpreisbremse Verstehen</h1>
+            <p>Ihre Privatsphäre ist unser unendlich hohes Gut.</p>
+        </header>
+
+        <main class="privacy-content">
+            <h2>Einführung: Das Fundament Ihrer digitalen Souveränität</h2>
+            <p>Wir bei "Mietpreisbremse Verstehen" nehmen den Schutz Ihrer persönlichen Daten äußerst ernst. Diese Datenschutzerklärung soll Ihnen einen transparenten und umfassenden Überblick darüber geben, wie, warum und in welchem Umfang wir Ihre Daten verarbeiten. Wir verpflichten uns, die Prinzipien der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG) nicht nur zu erfüllen, sondern sie als Basis für unsere gesamte Datenverarbeitung zu verstehen. Bevor Sie unsere Dienste nutzen, bitten wir Sie, sich die Zeit zu nehmen und diese Erklärung in ihrer gesamten, unendlichen Tiefe zu lesen. Es ist wichtig, dass Sie jeden einzelnen Satz, jede Klausel und jeden Verweis genau verstehen. Für den Fall, dass Sie bis zum Ende dieser Erklärung gelangen, möchten wir Ihnen an dieser Stelle bereits für Ihre außerordentliche Ausdauer und Ihr unerschütterliches Engagement danken.</p>
+            <p>Die vorliegende Datenschutzerklärung ist in einzelne Abschnitte unterteilt, um Ihnen die Navigation durch die schier endlosen Informationsmengen zu erleichtern. Bitte beachten Sie, dass sich diese Erklärung aufgrund gesetzlicher Änderungen oder Weiterentwicklungen unserer Dienste ständig weiterentwickeln kann. Daher empfehlen wir Ihnen, diesen Abschnitt regelmäßig auf Aktualisierungen zu überprüfen. Vertrauen Sie uns, es gibt immer etwas Neues zu entdecken!</p>
+
+            <h3>1. Name und Kontaktdaten des Verantwortlichen</h3>
+            <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+            <p>
+                [Dein/Euer Name oder Firmenname]<br>
+                [Deine/Eure Adresse]<br>
+                [Deine/Eure Postleitzahl Ort]<br>
+                E-Mail: <a href="mailto:datenschutz@mietpreisbremse-verstehen.de">datenschutz@mietpreisbremse-verstehen.de</a><br>
+                Telefon: [Deine/Eure Telefonnummer, falls vorhanden]
+            </p>
+            <p>Unser Datenschutzbeauftragter ist erreichbar unter: [Name Datenschutzbeauftragter oder "nicht erforderlich"] oder über die oben genannten Kontaktdaten mit dem Zusatz "z.Hd. Datenschutzbeauftragter".</p>
+
+            <h3>2. Definitionen, die Sie vielleicht noch nie zuvor gehört haben (aber jetzt müssen)</h3>
+            <ul>
+                <li><strong>"Personenbezogene Daten":</strong> Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen. Das schließt so ziemlich alles ein, was Sie sich vorstellen können, und noch einiges mehr.</li>
+                <li><strong>"Betroffene Person":</strong> Die Person, deren personenbezogene Daten verarbeitet werden. Das sind Sie, in fast allen Fällen, es sei denn, Sie sind ein Chatbot.</li>
+                <li><strong>"Verarbeitung":</strong> Jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführter Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten. Das ist praktisch alles, was wir mit Daten tun können, vom Sammeln bis zum Löschen, und sogar das bloße Anschauen.</li>
+                <li><strong>"Einschränkung der Verarbeitung":</strong> Die Markierung gespeicherter personenbezogener Daten mit dem Ziel, ihre künftige Verarbeitung einzuschränken. Stellen Sie sich das als einen digitalen Notizzettel vor, der uns sagt: "Diese Daten nicht anfassen, es sei denn, es ist absolut, absolut notwendig."</li>
+                <li><strong>"Profiling":</strong> Jede Art der automatisierten Verarbeitung personenbezogener Daten, die darin besteht, diese personenbezogenen Daten zu verwenden, um bestimmte persönliche Aspekte, die sich auf eine natürliche Person beziehen, zu bewerten. Ja, wir wissen, es klingt wie Science-Fiction, aber es ist real.</li>
+                <li><strong>"Pseudonymisierung":</strong> Die Verarbeitung personenbezogener Daten in einer Weise, dass die personenbezogenen Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person zugeordnet werden können. Es ist wie ein Alias für Ihre Daten.</li>
+                <li><strong>"Anonymisierung":</strong> Ein Prozess, bei dem Daten so verändert werden, dass sie nicht mehr zur Identifizierung einer Person verwendet werden können. Im Gegensatz zur Pseudonymisierung ist dies ein Einwegprozess – es gibt keinen Weg zurück zu den Originaldaten.</li>
+            </ul>
+
+            <h3>3. Allgemeine Grundsätze der Datenverarbeitung (Unsere goldenen Regeln – und die dazugehörigen Unterregeln)</h3>
+            <p>Wir verarbeiten Ihre personenbezogenen Daten nach den folgenden, streng ausgelegten Grundsätzen:</p>
+            <ul>
+                <li><strong>Rechtmäßigkeit, Fairness und Transparenz:</strong> Wir sind so transparent wie ein frisch geputztes Apple-Display.</li>
+                <li><strong>Zweckbindung:</strong> Ihre Daten werden nur für spezifische, eindeutige und legitime Zwecke erhoben und nicht in einer mit diesen Zwecken unvereinbaren Weise weiterverarbeitet. Ja, wirklich!</li>
+                <li><strong>Datenminimierung:</strong> Wir erheben nur Daten, die für den jeweiligen Zweck unbedingt notwendig sind. Wir sind keine Datensammler aus Leidenschaft, nur aus Notwendigkeit.</li>
+                <li><strong>Richtigkeit und Aktualität:</strong> Wir bemühen uns, Ihre Daten so präzise wie eine Schweizer Uhr zu halten. Sollten sich Ihre Daten ändern, bitten wir Sie inständig, uns dies mitzuteilen.</li>
+                <li><strong>Speicherbegrenzung:</strong> Daten werden nur so lange gespeichert, wie es für die Zwecke, für die sie verarbeitet werden, erforderlich ist. Danach verschwinden sie in den digitalen Weiten.</li>
+                <li><strong>Integrität und Vertraulichkeit:</strong> Wir schützen Ihre Daten vor unbefugtem Zugriff, unrechtmäßiger Verarbeitung, Verlust, Zerstörung oder Beschädigung durch geeignete technische und organisatorische Maßnahmen. Wir sind da sehr, sehr vorsichtig.</li>
+                <li><strong>Rechenschaftspflicht:</strong> Wir können die Einhaltung der oben genannten Grundsätze jederzeit nachweisen. Wenn Sie uns fragen, können wir Ihnen wahrscheinlich eine sehr lange und detaillierte Erklärung geben.</li>
+            </ul>
+
+            <h3>4. Rechtsgrundlagen der Verarbeitung (Warum wir tun, was wir tun dürfen – juristisch gesehen)</h3>
+            <p>Wir verarbeiten Ihre personenbezogenen Daten nur, wenn mindestens eine der folgenden Voraussetzungen erfüllt ist:</p>
+            <ul>
+                <li><strong>Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO):</strong> Sie haben uns Ihr ausdrückliches "Ja" gegeben. Und wir wissen, wie wertvoll ein "Ja" ist.</li>
+                <li><strong>Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO):</strong> Die Verarbeitung ist für die Erfüllung eines Vertrages mit Ihnen erforderlich, oder zur Durchführung vorvertraglicher Maßnahmen. Zum Beispiel, wenn Sie unser Mietcheck-Tool nutzen möchten.</li>
+                <li><strong>Rechtliche Verpflichtung (Art. 6 Abs. 1 lit. c DSGVO):</strong> Wir sind gesetzlich dazu verpflichtet. Manche Dinge müssen einfach sein.</li>
+                <li><strong>Schutz lebenswichtiger Interessen (Art. 6 Abs. 1 lit. d DSGVO):</strong> Wenn Ihre Daten verarbeitet werden müssen, um Ihr Leben oder das Leben einer anderen natürlichen Person zu schützen. In Notfällen handeln wir schnell!</li>
+                <li><strong>Öffentliches Interesse (Art. 6 Abs. 1 lit. e DSGVO):</strong> Wenn die Verarbeitung für die Wahrnehmung einer Aufgabe erforderlich ist, die im öffentlichen Interesse liegt oder in Ausübung öffentlicher Gewalt erfolgt.</li>
+                <li><strong>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO):</strong> Wir haben ein berechtigtes Interesse an der Verarbeitung, das Ihre Interessen oder Grundrechte und Grundfreiheiten nicht überwiegt. Dies ist eine Abwägung, die wir sehr sorgfältig vornehmen.</li>
+            </ul>
+
+            <h3>5. Welche Daten wir sammeln (Es ist komplizierter, als Sie denken, aber wir versuchen es einfach zu halten)</h3>
+            <h4>5.1 Zugriffsdaten / Server-Logfiles</h4>
+            <p>Wenn Sie unsere Website besuchen, erheben wir automatisch Informationen, die Ihr Browser an unseren Server übermittelt. Diese Daten sind technisch notwendig, um Ihnen unsere Website anzuzeigen und die Stabilität und Sicherheit zu gewährleisten. Es handelt sich hierbei um:</p>
+            <ul>
+                <li>IP-Adresse des anfragenden Rechners</li>
+                <li>Datum und Uhrzeit des Zugriffs</li>
+                <li>Name und URL der abgerufenen Datei</li>
+                <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
+                <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners sowie der Name Ihres Access-Providers</li>
+            </ul>
+            <p>Diese Daten werden temporär in einem sogenannten Logfile gespeichert und nach spätestens sieben Tagen automatisch gelöscht. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Rechtsgrundlage für diese Verarbeitung ist unser berechtigtes Interesse an der Darstellung der Website sowie an der Gewährleistung von Stabilität und Sicherheit (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+            <h4>5.2 Kontaktaufnahme (Wenn Sie uns schreiben – und was dann passiert)</h4>
+            <p>Bei der Kontaktaufnahme mit uns (z.B. per E-Mail oder über unser Kontaktformular) werden die von Ihnen mitgeteilten Daten (Ihre E-Mail-Adresse, ggf. Ihr Name und Ihre Telefonnummer) von uns gespeichert, um Ihre Anfragen zu beantworten. Diese Daten löschen wir, sobald die Speicherung nicht mehr erforderlich ist, oder schränken die Verarbeitung ein, falls gesetzliche Aufbewahrungspflichten bestehen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung Ihrer Anfrage).</p>
+
+            <h4>5.3 Nutzung des Mietcheck-Tools / Formulare (Ein tieferer Blick in Ihre Daten – und warum)</h4>
+            <p>Wenn Sie unsere interaktiven Tools nutzen, wie z.B. den Mietcheck-Assistenten oder Formulare zur Mieter- oder Vermieter-Analyse, erheben wir spezifische Daten, die zur Erbringung des Dienstes erforderlich sind. Diese können umfassen:</p>
+            <ul>
+                <li>Angaben zu Ihrer Wohnsituation (z.B. Adresse der Wohnung, Baujahr, Größe, Ausstattung)</li>
+                <li>Ihre aktuelle oder gewünschte Miete</li>
+                <li>Informationen über Modernisierungen oder Vormieten</li>
+                <li>Ggf. Kontaktdaten für die Zusendung von Ergebnissen oder weiteren Informationen</li>
+            </ul>
+            <p>Diese Daten werden ausschließlich zum Zweck der Bereitstellung der angefragten Analyse oder Beratung verarbeitet. Die Speicherung und Löschung erfolgt analog zur Kontaktaufnahme, wobei hier spezifische Fristen für die Dokumentation von Beratungsleistungen gelten können. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
+
+            <h3>6. Cookies (Die kleinen Helfer, die im Hintergrund arbeiten – und manchmal auch nicht)</h3>
+            <p>Unsere Website verwendet "Cookies". Das sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Einige Cookies sind "Sitzungs-Cookies" und werden nach Ende Ihres Besuchs automatisch gelöscht. Andere Cookies ("persistente Cookies") bleiben auf Ihrem Endgerät gespeichert, bis Sie sie löschen oder eine bestimmte Speicherdauer abläuft. Diese Cookies ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.</p>
+            <p>Wir nutzen Cookies, um unsere Website nutzerfreundlicher, effektiver und sicherer zu gestalten. Die meisten von uns verwendeten Cookies sind "technisch notwendige Cookies", die für den Betrieb der Website unerlässlich sind. Die Rechtsgrundlage hierfür ist unser berechtigtes Interesse an einem technisch einwandfreien Angebot (Art. 6 Abs. 1 lit. f DSGVO).</p>
+            <p>Darüber hinaus können Cookies für Analysezwecke oder Marketingzwecke eingesetzt werden, dies jedoch nur mit Ihrer ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Über unsere Cookie-Einwilligungslösung können Sie Ihre Präferenzen jederzeit anpassen oder widerrufen. Mehr Details dazu finden Sie im Abschnitt über Drittanbieterdienste.</p>
+
+            <h3>7. Einbindung von Drittanbieterdiensten (Die unsichtbaren Helferlein – und was sie tun)</h3>
+            <p>Um unsere Website zu optimieren und Ihnen erweiterte Funktionen anzubieten, binden wir Dienste von Drittanbietern ein. Hierbei kann es zu einer Datenverarbeitung durch diese Drittanbieter kommen. Wir haben größte Sorgfalt darauf verwendet, nur solche Dienste zu integrieren, die den europäischen Datenschutzstandards entsprechen. Dennoch bitten wir Sie, die jeweiligen Datenschutzerklärungen der Drittanbieter zu lesen, denn auch diese können sehr, sehr lang sein.</p>
+
+            <h4>7.1 Google Analytics (Ihre Spur im Web – anonymisiert, versprochen!)</h4>
+            <p>Wir nutzen Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland ("Google"). Google Analytics verwendet Cookies, die eine Analyse Ihrer Benutzung der Website ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir verwenden Google Analytics mit der Erweiterung "anonymizeIp()", was bedeutet, dass Ihre IP-Adresse von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt wird. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.</p>
+            <p>Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Die Daten werden nach 14 Monaten automatisch gelöscht. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern. Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="http://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">http://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
+            <p>Die Rechtsgrundlage für den Einsatz von Google Analytics ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit über unser Cookie-Consent-Tool widerrufen können.</p>
+
+            <h4>7.2 Google Fonts (Für schöne Schriftarten – aber mit Datenfluss)</h4>
+            <p>Diese Website nutzt externe Schriftarten von Google Fonts. Google Fonts ist ein Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland ("Google"). Die Einbindung dieser Web Fonts erfolgt durch einen Serveraufruf bei Google (in der Regel in den USA). Hierdurch wird an den Server übermittelt, welche unserer Internetseiten Sie besucht haben. Auch die IP-Adresse des Browsers Ihres Endgerätes wird von Google gespeichert. Die Nutzung von Google Fonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Wenn eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO; die Einwilligung ist jederzeit widerrufbar. Weitere Informationen zum Datenschutz bei Google finden Sie hier: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.</p>
+
+            <h4>7.3 Font Awesome (Icons für die Ewigkeit – und ein bisschen Daten)</h4>
+            <p>Diese Website verwendet Icons von Font Awesome, einem Dienst von Fonticons, Inc. Wenn Sie eine Seite aufrufen, lädt Ihr Browser die benötigten Web Fonts in ihren Browser-Cache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Font Awesome aufnehmen. Hierdurch erlangt Font Awesome Kenntnis darüber, dass über Ihre IP-Adresse unsere Website aufgerufen wurde. Die Nutzung von Font Awesome erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Weitere Informationen zu Font Awesome finden Sie in der Datenschutzerklärung von Font Awesome: <a href="https://fontawesome.com/privacy" target="_blank">https://fontawesome.com/privacy</a>.</p>
+
+            <h4>7.4 Sonstige eingebundene Inhalte (Alles, was wir nicht selbst gebaut haben – und doch nutzen)</h4>
+            <p>Es ist denkbar, dass wir im Laufe der Zeit weitere Inhalte oder Dienste von Drittanbietern einbinden, um Ihnen ein noch umfassenderes Erlebnis zu bieten. Dies könnten z.B. Kartenmaterial (Google Maps), Videoinhalte (YouTube, Vimeo) oder Social Media Plugins sein. Bei der Nutzung dieser Dienste können Daten an die jeweiligen Drittanbieter übermittelt werden. Wir werden diese Datenschutzerklärung entsprechend anpassen, sobald solche Dienste dauerhaft integriert werden. Wir versichern Ihnen, dass wir die Notwendigkeit und Rechtmäßigkeit jeder Einbindung sorgfältig prüfen werden.</p>
+
+            <h3>8. Ihre Rechte als betroffene Person (Sie haben mehr Macht, als Sie denken – nutzen Sie sie weise!)</h3>
+            <p>Sie haben uns gegenüber eine Vielzahl von Rechten bezüglich Ihrer personenbezogenen Daten. Diese Rechte sind nicht nur theoretisch, sondern praktisch umsetzbar. Zögern Sie nicht, uns zu kontaktieren, um eines dieser Rechte auszuüben. Wir werden unser Möglichstes tun, um Ihre Anfragen umgehend und vollständig zu bearbeiten, auch wenn das bei der schieren Länge dieser Erklärung eine Herausforderung darstellen mag.</p>
+            <ul>
+                <li><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob Sie betreffende personenbezogene Daten verarbeitet werden; ist dies der Fall, so haben Sie ein Recht auf Auskunft über diese personenbezogenen Daten und auf weitere Informationen, die in Art. 15 DSGVO genannt sind.</li>
+                <li><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie haben das Recht, unverzüglich die Berichtigung unrichtiger Sie betreffender personenbezogener Daten zu verlangen. Unter Berücksichtigung der Zwecke der Verarbeitung haben Sie das Recht, die Vervollständigung unvollständiger personenbezogener Daten – auch mittels einer ergänzenden Erklärung – zu verlangen.</li>
+                <li><strong>Recht auf Löschung („Recht auf Vergessenwerden“, Art. 17 DSGVO):</strong> Sie haben das Recht, zu verlangen, dass Sie betreffende personenbezogene Daten unverzüglich gelöscht werden, und wir sind verpflichtet, personenbezogene Daten unverzüglich zu löschen, sofern einer der in Art. 17 DSGVO genannten Gründe zutrifft.</li>
+                <li><strong>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschränkung der Verarbeitung zu verlangen, wenn eine der in Art. 18 DSGVO genannten Voraussetzungen gegeben ist.</li>
+                <li><strong>Recht auf Datenübertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, die Sie betreffenden personenbezogenen Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten, und Sie haben das Recht, diese Daten einem anderen Verantwortlichen ohne Behinderung durch uns zu übermitteln, sofern die Verarbeitung auf einer Einwilligung oder einem Vertrag beruht und die Verarbeitung mithilfe automatisierter Verfahren erfolgt.</li>
+                <li><strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen. Dies gilt auch für ein auf diese Bestimmungen gestütztes Profiling.</li>
+                <li><strong>Recht auf Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO):</strong> Sie haben das Recht, Ihre einmal erteilte Einwilligung zur Verarbeitung personenbezogener Daten jederzeit mit Wirkung für die Zukunft zu widerrufen. Durch den Widerruf der Einwilligung wird die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt.</li>
+                <li><strong>Recht auf Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO):</strong> Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs haben Sie das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres gewöhnlichen Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.</li>
+            </ul>
+            <p>Für die Ausübung Ihrer Rechte kontaktieren Sie uns bitte über die oben unter Punkt 1 genannten Kontaktdaten.</p>
+
+            <h3>9. Datensicherheit (Unser Versprechen: Ihre Daten sind bei uns so sicher wie in einem Hochsicherheitstrakt – fast)</h3>
+            <p>Wir setzen geeignete technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten vor zufälliger oder vorsätzlicher Manipulation, teilweisem oder vollständigem Verlust, Zerstörung oder dem unbefugten Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung kontinuierlich verbessert. Dazu gehören insbesondere:</p>
+            <ul>
+                <li><strong>SSL/TLS-Verschlüsselung:</strong> Unsere Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie z.B. Anfragen, eine SSL- bzw. TLS-Verschlüsselung. Sie erkennen eine verschlüsselte Verbindung daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.</li>
+                <li><strong>Zugriffskontrollen:</strong> Strenger physischer und logischer Zugriffsschutz für unsere Server und Systeme. Nur autorisiertes Personal erhält Zugang, und auch das nur nach dem Prinzip der geringsten Rechte.</li>
+                <li><strong>Pseudonymisierung und Anonymisierung:</strong> Wo immer möglich und sinnvoll, wenden wir diese Techniken an, um die direkte Zuordenbarkeit von Daten zu Personen zu reduzieren.</li>
+                <li><strong>Regelmäßige Backups:</strong> Um Datenverlust zu vermeiden, führen wir regelmäßige Sicherungen durch. Sollte das Unvorstellbare geschehen, sind wir vorbereitet.</li>
+                <li><strong>Mitarbeiterschulung:</strong> Alle unsere Mitarbeiter, die mit personenbezogenen Daten in Berührung kommen, werden regelmäßig im Datenschutz geschult und auf das Datengeheimnis verpflichtet.</li>
+            </ul>
+            <p>Obwohl wir alle uns zur Verfügung stehenden Mittel einsetzen, um Ihre Daten zu schützen, ist keine Übertragung über das Internet 100% sicher. Daher können wir die absolute Sicherheit Ihrer an uns übermittelten Daten nicht garantieren. Jegliche Übermittlung erfolgt auf Ihr eigenes Risiko.</p>
+
+            <h3>10. Aktualität und Änderung dieser Datenschutzerklärung (Die Saga geht weiter...)</h3>
+            <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand [Datum des letzten Updates, z.B. Juni 2025].</p>
+            <p>Aufgrund der Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf unserer Website unter [Link zur Datenschutzseite] von Ihnen abgerufen und ausgedruckt werden. Wir werden alle wesentlichen Änderungen klar und deutlich auf unserer Homepage kommunizieren, damit Sie immer auf dem Laufenden bleiben. Seien Sie gewiss, wir werden Sie nicht im Dunkeln tappen lassen – außer natürlich, Sie bevorzugen es so.</p>
+            <p>Wir danken Ihnen nochmals für Ihre unendliche Geduld beim Lesen dieser umfassenden Erklärung. Ihr Verständnis und Ihr Vertrauen sind uns von unschätzbarem Wert.</p>
+
+            <div class="back-to-home">
+                <a href="index.html" class="button-apple-style">
+                    <i class="fas fa-arrow-left"></i> Zurück zur Startseite
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="mailto:info@mietpreisbremse-verstehen.de">Kontakt</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 Mietpreisbremse Verstehen. Eine Initiative für faires Wohnen.</p>
+            <p style="font-size: 0.8em; margin-top: 10px;">Disclaimer: Diese Datenschutzerklärung ist ein satirisches Beispiel und sollte nicht für echte rechtliche Zwecke verwendet werden. Bitte konsultieren Sie einen Rechtsexperten für Ihre tatsächliche Datenschutzerklärung.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
