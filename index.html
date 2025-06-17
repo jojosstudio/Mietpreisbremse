@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mietpreisbremse Verstehen – Fair Wohnen in Deutschland</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0056b3; /* Dunkelblau */
+            --secondary-color: #007bff; /* Hellblau */
+            --accent-color: #28a745; /* Grün für Erfolg/Positives */
+            --text-color: #333;
+            --light-gray: #f8f9fa;
+            --dark-gray: #6c757d;
+            --border-radius: 8px;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 0.8em 0;
+            box-shadow: var(--shadow);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--light-gray);
+            border-bottom: 2px solid white;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 86, 179, 0.7)), url('https://via.placeholder.com/1500x500?text=Modernes+Wohngebaeude') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 4em 1em;
+            position: relative;
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 2em auto;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .button-group a {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1em 2em;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .button-group a:hover {
+            background-color: #218838; /* Dunkleres Grün */
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+
+        .section {
+            background-color: white;
+            padding: 2em;
+            margin-bottom: 2em;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .section h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-top: 0;
+            margin-bottom: 1em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2em;
+            margin-top: 2em;
+        }
+
+        .feature-card {
+            background-color: var(--light-gray);
+            padding: 1.5em;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card .icon {
+            font-size: 3em;
+            color: var(--secondary-color);
+            margin-bottom: 0.5em;
+        }
+
+        .feature-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .cta-banner {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3em 1em;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin-bottom: 2em;
+        }
+
+        .cta-banner h3 {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .cta-banner p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        .cta-banner .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1em 2.5em;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-banner .cta-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: 2em;
+        }
+
+        footer nav ul li a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        footer nav ul li a:hover {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .hero h2 {
+                font-size: 2.2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .button-group {
+                flex-direction: column;
+            }
+            .button-group a {
+                width: 80%;
+                margin: 0.5em auto;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .section h3 {
+                font-size: 1.8em;
+            }
+            .cta-banner h3 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mietpreisbremse Verstehen</h1>
+        <p>Fair Wohnen in Deutschland – Ihre Rechte und Pflichten</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Start</a></li>
+            <li><a href="#mieter">Für Mieter</a></li>
+            <li><a href="#vermieter">Für Vermieter</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#kontakt">Kontakt & Beratung</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Ihre Miete ist zu hoch? Wir helfen Ihnen!</h2>
+            <p>Die Mietpreisbremse soll überzogene Mietpreise in angespannten Wohnungsmärkten eindämmen und bezahlbares Wohnen sichern. Erfahren Sie hier, wie sie funktioniert und wie Sie Ihre Rechte wahrnehmen können.</p>
+            <div class="button-group">
+                <a href="#mieter">Ich bin Mieter</a>
+                <a href="#vermieter">Ich bin Vermieter</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="section">
+                <h3>Was ist die Mietpreisbremse?</h3>
+                <p>Die Mietpreisbremse, offiziell als "Mietrechtsnovellierungsgesetz" bekannt, ist eine gesetzliche Regelung, die in bestimmten Regionen Deutschlands die Höhe der Miete bei Neuvermietungen begrenzt. Ihr Ziel ist es, den Anstieg der Mieten in angespannten Wohnungsmärkten zu dämpfen und Wohnen für alle bezahlbar zu halten.</p>
+                <p>Sie besagt, dass die Miete bei einer Neuvermietung höchstens <strong>10 Prozent über der ortsüblichen Vergleichsmiete</strong> liegen darf. Es gibt jedoch wichtige Ausnahmen, die Sie kennen sollten.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">🏠</div>
+                        <h4>Ortsübliche Vergleichsmiete</h4>
+                        <p>Grundlage ist der lokale Mietspiegel oder Vergleichsmieten. Wir zeigen Ihnen, wie Sie diese finden.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">⚖️</div>
+                        <h4>Gesetzliche Regelung</h4>
+                        <p>Ein wichtiges Instrument des Sozialstaats zum Schutz von Mietern in Ballungsgebieten.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📍</div>
+                        <h4>Geltungsbereich</h4>
+                        <p>Gilt nur in von den Bundesländern ausgewiesenen Gebieten mit angespanntem Wohnungsmarkt.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">⚠️</div>
+                        <h4>Wichtige Ausnahmen</h4>
+                        <p>Neubau, umfassende Modernisierung oder eine bereits höhere Vormiete können Ausnahmen darstellen.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mieter" class="section">
+                <h3>Für Mieter: Ihre Miete überprüfen und handeln</h3>
+                <p>Fühlen Sie sich von zu hohen Mietforderungen betroffen? Hier erfahren Sie, wie Sie vorgehen können:</p>
+                <ul>
+                    <li><strong>Mieten-Check:</strong> Nutzen Sie unseren interaktiven Rechner (bald verfügbar!), um eine erste Einschätzung zu erhalten, ob Ihre Miete zu hoch ist.</li>
+                    <li><strong>Ortsübliche Vergleichsmiete ermitteln:</strong> Erfahren Sie, wo Sie den aktuellen Mietspiegel Ihrer Stadt finden oder wie Sie Vergleichsmieten recherchieren können.</li>
+                    <li><strong>Auskunftsrecht nutzen:</strong> Fordern Sie bei Ihrem Vermieter Auskunft über die Vormiete oder Modernisierungen.</li>
+                    <li><strong>Miete rügen:</strong> Erfahren Sie, wie Sie eine qualifizierte Rüge nach § 556g BGB formulieren und Ihre Ansprüche geltend machen. Wir stellen Ihnen Musterbriefe zur Verfügung.</li>
+                    <li><strong>Hilfe suchen:</strong> Mietervereine und spezialisierte Anwälte können Sie unterstützen. Wir listen Beratungsstellen in Ihrer Nähe auf.</li>
+                </ul>
+                <div style="text-align: center; margin-top: 2em;">
+                    <a href="#kontakt" class="cta-button" style="background-color: var(--primary-color);">Jetzt Beratung finden</a>
+                </div>
+            </section>
+
+            <section id="vermieter" class="section">
+                <h3>Für Vermieter: Die Mietpreisbremse korrekt anwenden</h3>
+                <p>Vermieter haben eine hohe Verantwortung. Eine korrekte Anwendung der Mietpreisbremse schützt vor Rechtsstreitigkeiten und fördert ein faires Mietverhältnis:</p>
+                <ul>
+                    <li><strong>Geltungsbereich prüfen:</strong> Stellen Sie sicher, ob die Mietpreisbremse in Ihrer Stadt oder Gemeinde gilt.</li>
+                    <li><strong>Ortsübliche Vergleichsmiete ermitteln:</strong> Lernen Sie, wie Sie rechtssicher die ortsübliche Vergleichsmiete bestimmen.</li>
+                    <li><strong>Ausnahmen korrekt anwenden:</strong> Detaillierte Informationen zu den Ausnahmen (Neubau, umfassende Modernisierung, Vormiete) und den erforderlichen Nachweisen.</li>
+                    <li><strong>Auskunftspflicht beachten:</strong> Erfahren Sie, welche Informationen Sie Mietinteressenten vor Vertragsabschluss unaufgefordert mitteilen müssen.</li>
+                    <li><strong>Rechtssichere Mietverträge:</strong> Tipps zur Gestaltung von Mietverträgen, die den Anforderungen der Mietpreisbremse entsprechen.</li>
+                </ul>
+                <div style="text-align: center; margin-top: 2em;">
+                    <a href="#faq" class="cta-button" style="background-color: var(--primary-color);">Häufige Fragen für Vermieter</a>
+                </div>
+            </section>
+
+            <section id="faq" class="section">
+                <h3>Häufig gestellte Fragen (FAQ)</h3>
+                <p>Hier finden Sie Antworten auf die wichtigsten Fragen zur Mietpreisbremse. Klicken Sie auf die Fragen, um die Antworten zu sehen.</p>
+                <details>
+                    <summary>Was ist die ortsübliche Vergleichsmiete?</summary>
+                    <p>Die ortsübliche Vergleichsmiete ist der Durchschnitt der Mieten, die in den letzten vier Jahren für Wohnungen vergleichbarer Art, Größe, Ausstattung, Beschaffenheit und Lage gezahlt wurden. Sie wird oft durch einen qualifizierten Mietspiegel ermittelt.</p>
+                </details>
+                <details>
+                    <summary>Wo gilt die Mietpreisbremse?</summary>
+                    <p>Die Mietpreisbremse gilt nur in Regionen, die von den jeweiligen Bundesländern als Gebiete mit angespannten Wohnungsmärkten ausgewiesen wurden. Dies sind in der Regel Großstädte und Ballungsgebiete. Eine genaue Liste finden Sie auf den Webseiten der Landesregierungen oder der Städte.</p>
+                </details>
+                <details>
+                    <summary>Was sind die Ausnahmen von der Mietpreisbremse?</summary>
+                    <p>Wesentliche Ausnahmen sind: Neubauten, die nach dem 1. Oktober 2014 erstmals vermietet wurden; Wohnungen, die nach einer umfassenden Modernisierung erstmals wiedervermietet werden; und Fälle, in denen die Vormiete bereits höher war (Bestandsschutz).</p>
+                </details>
+                <details>
+                    <summary>Wie rüge ich eine zu hohe Miete?</summary>
+                    <p>Die Rüge muss schriftlich erfolgen und klar darlegen, dass die Miete gegen die Mietpreisbremse verstößt. Sie sollten darin die Gründe nennen (z.B. Überschreitung des Mietspiegels) und den Vermieter zur Reduzierung auffordern. Es gibt keine spezifische Frist, aber je früher, desto besser.</p>
+                </details>
+                <details>
+                    <summary>Kann ich zu viel gezahlte Miete zurückfordern?</summary>
+                    <p>Ja, in der Regel können Sie die zu viel gezahlte Miete ab dem Zeitpunkt zurückfordern, zu dem Sie die Rüge wirksam an den Vermieter geschickt haben. Für die Zeit davor ist eine Rückforderung normalerweise nicht möglich.</p>
+                </details>
+                </section>
+
+            <section id="kontakt" class="cta-banner">
+                <h3>Sie brauchen persönliche Unterstützung?</h3>
+                <p>Egal, ob Mieter oder Vermieter – manchmal ist eine individuelle Beratung unerlässlich. Wir helfen Ihnen, die richtigen Ansprechpartner zu finden.</p>
+                <a href="mailto:info@mietpreisbremse-verstehen.de" class="cta-button">Jetzt Kontakt aufnehmen</a>
+                <p style="margin-top: 1em; font-size: 0.9em; opacity: 0.9;">Oder finden Sie Beratungsstellen in Ihrer Nähe:</p>
+                <a href="#" class="cta-button" style="background-color: var(--primary-color);">Beratungsstellen finden (bald verfügbar)</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">Impressum</a></li>
+                <li><a href="#">Datenschutz</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 Mietpreisbremse Verstehen. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>
