@@ -18,6 +18,7 @@
             --primary-accent: #3f51b5; /* Our primary blue for strong highlights */
             --secondary-accent: #673ab7; /* Our secondary violet for playful elements */
             --gold-accent: #ffc107; /* Warm accent for special buttons */
+            --white: #ffffff; /* Explicitly define white */
 
             --border-radius-apple: 12px; /* Apple-like subtle rounded corners */
             --border-radius-card-organic: 24px; /* More rounded for main sections, organic feel */
@@ -61,7 +62,7 @@
         /* --- Header (Apple-like with playful touch) --- */
         header {
             background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
-            color: var(--white);
+            color: var(--white); /* FIX: Textfarbe auf Weiß gesetzt */
             padding: 2.5em 0;
             text-align: center;
             box-shadow: var(--shadow-pop);
@@ -75,7 +76,7 @@
             font-family: 'Pacifico', cursive; /* Playful font for the main title */
             font-size: 3.8em;
             margin: 0;
-            color: var(--white);
+            color: var(--white); /* FIX: Textfarbe auf Weiß gesetzt */
             text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
             animation: fadeInScale 1s ease-out forwards;
         }
@@ -86,6 +87,7 @@
             opacity: 0;
             animation: fadeIn 1.2s ease-out 0.5s forwards;
             font-weight: 300;
+            color: var(--white); /* FIX: Textfarbe auf Weiß gesetzt */
         }
 
         /* Organic shape in header */
@@ -339,7 +341,7 @@
         /* --- CTA Banner (Prominent Apple-like call to action) --- */
         .cta-banner {
             background: linear-gradient(45deg, var(--apple-blue) 0%, var(--primary-accent) 100%);
-            color: var(--white);
+            color: var(--white); /* FIX: Textfarbe auf Weiß gesetzt */
             padding: 4em 1.5em;
             text-align: center;
             border-radius: var(--border-radius-card-organic);
@@ -379,7 +381,7 @@
         }
 
         .cta-banner h3 {
-            color: var(--white);
+            color: var(--white); /* FIX: Textfarbe auf Weiß gesetzt */
             font-family: 'Montserrat', sans-serif;
             font-size: 3.2em;
             margin-bottom: 0.6em;
@@ -393,11 +395,12 @@
             margin-left: auto;
             margin-right: auto;
             font-weight: 300;
+            color: var(--white); /* FIX: Textfarbe auf Weiß gesetzt */
         }
 
         .cta-banner .button-apple-style {
             background-color: var(--gold-accent);
-            color: var(--primary-accent); /* Text in primary accent for contrast */
+            color: var(--primary-accent); /* FIX: Textfarbe auf unsere Primary Accent gesetzt (dunkel genug) */
             padding: 1.2em 3em;
             font-size: 1.3em;
             box-shadow: 0 4px 15px rgba(255,193,7,0.3);
@@ -628,7 +631,7 @@
                             <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
                             <h4>Ausnahmen</h4>
                             <p>Neubau, Modernisierung oder höhere Vormiete können von der Regelung abweichen.</p>
-                        </div>
+                        <p>
                     </div>
                 </section>
 
