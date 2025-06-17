@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum – Mietpreisbremse Verstehen (Transparenz ist unser Motto)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Variables (Apple-like & organic fusion) --- */
+        :root {
+            --apple-bg-light: #f5f5f7; /* Very light, almost white background */
+            --apple-text-dark: #1d1d1f; /* Dark text for clarity */
+            --apple-blue: #007aff; /* Apple's signature blue */
+            --apple-gray-text: #6e6e73; /* Standard secondary text gray */
+            --apple-gray-light: #d2d2d7; /* Lighter gray for borders/dividers */
+
+            --primary-accent: #3f51b5; /* Our primary blue for strong highlights */
+            --secondary-accent: #673ab7; /* Our secondary violet for playful elements */
+            --gold-accent: #ffc107; /* Warm accent for special buttons */
+            --white: #ffffff; /* Explicitly define white */
+
+            --border-radius-apple: 12px; /* Apple-like subtle rounded corners */
+            --border-radius-card-organic: 24px; /* More rounded for main sections, organic feel */
+            --shadow-subtle: 0 4px 15px rgba(0,0,0,0.05); /* Very light shadow */
+            --shadow-pop: 0 10px 30px rgba(0,0,0,0.1); /* More pronounced shadow for interactive elements */
+        }
+
+        /* --- Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Open Sans', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--apple-bg-light);
+            color: var(--apple-text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Aligned to top for content */
+            overflow-x: hidden;
+        }
+        
+        /* General content container */
+        .page-container {
+            background: var(--white);
+            border-radius: var(--border-radius-card-organic);
+            overflow: hidden;
+            box-shadow: var(--shadow-pop);
+            max-width: 1000px; /* Slightly narrower for impressum */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Header (Adapted for impressum page) --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
+            color: var(--white);
+            padding: 2.5em 0;
+            text-align: center;
+            box-shadow: var(--shadow-pop);
+            border-bottom-left-radius: var(--border-radius-apple);
+            border-bottom-right-radius: var(--border-radius-apple);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.2em;
+            margin: 0;
+            color: var(--white);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            animation: fadeInScale 1s ease-out forwards;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 1.2s ease-out 0.5s forwards;
+            font-weight: 300;
+            color: var(--white);
+        }
+
+        header::before { /* Organic shape from main header */
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 180px;
+            height: 180px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(40px);
+            animation: floatBlob 12s ease-in-out infinite alternate;
+        }
+
+        /* --- Impressum Content Area --- */
+        .impressum-content {
+            padding: 3em;
+            color: var(--apple-text-dark);
+        }
+
+        .impressum-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2em;
+            color: var(--primary-accent);
+            margin-bottom: 0.8em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--apple-gray-light);
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+        .impressum-content h2::after { /* Playful dot */
+            content: '';
+            width: 14px;
+            height: 14px;
+            background-color: var(--gold-accent);
+            border-radius: 50%;
+            position: absolute;
+            right: -20px;
+            bottom: -7px;
+            box-shadow: 0 0 8px var(--gold-accent);
+        }
+
+        .impressum-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            color: var(--apple-text-dark);
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            position: relative;
+            padding-left: 25px; /* Indent for accent line */
+        }
+        .impressum-content h3::before { /* Left accent line */
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px;
+            width: 5px;
+            background: var(--apple-blue);
+            border-radius: 3px;
+        }
+
+        .impressum-content p {
+            margin-bottom: 1.2em;
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: var(--apple-gray-text);
+        }
+
+        .impressum-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5em;
+        }
+
+        .impressum-content ul li {
+            margin-bottom: 0.5em;
+            font-size: 1em;
+            color: var(--apple-gray-text);
+        }
+
+        .impressum-content a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .impressum-content a:hover {
+            color: var(--primary-accent);
+            text-decoration: underline;
+        }
+
+        /* Return to Homepage Button */
+        .back-to-home {
+            text-align: center;
+            margin: 3em 0 2em;
+            padding: 0 3em;
+        }
+        .back-to-home .button-apple-style {
+            background-color: var(--primary-accent);
+            color: var(--white);
+            padding: 1em 2.5em;
+            font-size: 1.1em;
+            border-radius: var(--border-radius-apple);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-subtle);
+        }
+        .back-to-home .button-apple-style:hover {
+            background-color: var(--secondary-accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-pop);
+        }
+
+        /* --- Footer (same as main site) --- */
+        footer {
+            background-color: var(--apple-bg-light);
+            color: var(--apple-gray-text);
+            text-align: center;
+            padding: 2em 0;
+            margin-top: 3em;
+            border-top-left-radius: var(--border-radius-apple);
+            border-top-right-radius: var(--border-radius-apple);
+            box-shadow: var(--shadow-subtle);
+            border-top: 1px solid var(--apple-gray-light);
+        }
+
+        footer nav ul {
+            margin-bottom: 1em;
+        }
+        footer nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        footer nav ul li a {
+            color: var(--apple-gray-text);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+        }
+        footer nav ul li a:hover {
+            color: var(--apple-text-dark);
+            border-bottom: 2px solid var(--apple-blue);
+            transform: translateY(-1px);
+        }
+
+        /* --- Keyframe Animations (copied from main site) --- */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInFromTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, 15px) rotate(10deg); }
+            50% { transform: translate(0, 30px) rotate(0deg); }
+            75% { transform: translate(-20px, 15px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+        @media (max-width: 992px) {
+            header h1 { font-size: 2.8em; }
+            .impressum-content h2 { font-size: 2em; }
+            .impressum-content h3 { font-size: 1.3em; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .page-container { padding: 0; }
+            header { padding: 2em 0; }
+            header h1 { font-size: 2.2em; }
+            header p { font-size: 1em; }
+            .impressum-content { padding: 2em; }
+            .impressum-content h2 { font-size: 1.8em; }
+            .impressum-content h3 { font-size: 1.1em; padding-left: 20px; }
+            .impressum-content h3::before { height: 18px; width: 4px; }
+            .impressum-content p { font-size: 0.95em; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.8em; }
+            .impressum-content h2 { font-size: 1.5em; }
+            .impressum-content h3 { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <header>
+            <h1>Impressum – Mietpreisbremse Verstehen</h1>
+            <p>Wer wir sind und wer für diesen digitalen Kompass verantwortlich ist.</p>
+        </header>
+
+        <main class="impressum-content">
+            <h2>Angaben gemäß § 5 TMG</h2>
+            <p>
+                [Dein/Euer Name oder Firmenname]<br>
+                [Dein/Eure Straße und Hausnummer]<br>
+                [Dein/Eure Postleitzahl und Ort]
+            </p>
+
+            <h3>Vertreten durch:</h3>
+            <p>[Vorname Nachname des/der Verantwortlichen]</p>
+
+            <h3>Kontakt:</h3>
+            <p>
+                Telefon: [Deine/Eure Telefonnummer, falls vorhanden]<br>
+                Telefax: [Deine/Eure Faxnummer, falls vorhanden]<br>
+                E-Mail: <a href="mailto:info@mietpreisbremse-verstehen.de">info@mietpreisbremse-verstehen.de</a>
+            </p>
+
+            <h3>Umsatzsteuer-ID:</h3>
+            <p>
+                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+                [Deine/Eure Umsatzsteuer-ID, falls vorhanden]
+            </p>
+
+            <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h3>
+            <p>
+                [Vorname Nachname des/der Verantwortlichen]<br>
+                [Deine/Eure Straße und Hausnummer]<br>
+                [Deine/Eure Postleitzahl und Ort]
+            </p>
+
+            <h2>Streitschlichtung</h2>
+            <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>.<br>
+            Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+            <h2>Haftung für Inhalte</h2>
+            <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+            <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+            <h2>Haftung für Links</h2>
+            <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+            <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+            <h2>Urheberrecht</h2>
+            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+            <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+            <div class="back-to-home">
+                <a href="index.html" class="button-apple-style">
+                    <i class="fas fa-arrow-left"></i> Zurück zur Startseite
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="mailto:info@mietpreisbremse-verstehen.de">Kontakt</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 Mietpreisbremse Verstehen. Eine Initiative für faires Wohnen.</p>
+            <p style="font-size: 0.8em; margin-top: 10px;">Disclaimer: Dies ist ein fiktives Impressum für ein Demo-Projekt. Für eine echte Website benötigen Sie ein rechtlich geprüftes Impressum.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
