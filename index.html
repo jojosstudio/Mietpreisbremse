@@ -3,124 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mietpreisbremse Verstehen – Fair Wohnen in Deutschland</title>
+    <title>Mietpreisbremse Verstehen – Eine Apple-Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
     <style>
+        /* --- General Variables (Apple-like & organic fusion) --- */
         :root {
-            --primary-color: #3f51b5; /* Indigoblau - modern, tief */
-            --secondary-color: #673ab7; /* Tiefes Violett - verspielt, lebendig */
-            --accent-color: #ffc107; /* Amber/Orange - warmer Akzent */
-            --text-color: #333;
-            --light-gray: #f0f2f5; /* Weicher Hintergrund */
-            --white: #ffffff;
-            --dark-gray: #6c757d;
-            --border-radius-soft: 12px; /* Weichere Ecken */
-            --border-radius-card: 20px; /* Stärker abgerundete Karten */
-            --shadow-light: 0 4px 15px rgba(0,0,0,0.08); /* Leichter, diffuser Schatten */
-            --shadow-deep: 0 8px 30px rgba(0,0,0,0.15); /* Tieferer Schatten für Highlights */
+            --apple-bg-light: #f5f5f7; /* Very light, almost white background */
+            --apple-text-dark: #1d1d1f; /* Dark text for clarity */
+            --apple-blue: #007aff; /* Apple's signature blue */
+            --apple-gray-text: #6e6e73; /* Standard secondary text gray */
+            --apple-gray-light: #d2d2d7; /* Lighter gray for borders/dividers */
+
+            --primary-accent: #3f51b5; /* Our primary blue for strong highlights */
+            --secondary-accent: #673ab7; /* Our secondary violet for playful elements */
+            --gold-accent: #ffc107; /* Warm accent for special buttons */
+
+            --border-radius-apple: 12px; /* Apple-like subtle rounded corners */
+            --border-radius-card-organic: 24px; /* More rounded for main sections, organic feel */
+            --shadow-subtle: 0 4px 15px rgba(0,0,0,0.05); /* Very light shadow */
+            --shadow-pop: 0 10px 30px rgba(0,0,0,0.1); /* More pronounced shadow for interactive elements */
         }
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
+        /* --- Base Styles --- */
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--light-gray);
-            color: var(--text-color);
-            overflow-x: hidden; /* Verhindert horizontales Scrollen durch Animationen */
+            box-sizing: border-box;
+            /* Prioritize Apple's system font, then our custom fonts */
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Open Sans', Arial, sans-serif;
         }
-
-        /* --- Global Styles --- */
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            margin-bottom: 0.8em;
+        
+        body {
+            background-color: var(--apple-bg-light);
+            color: var(--apple-text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden; /* Prevents horizontal scroll from animations */
         }
-
-        .container {
+        
+        /* General content container */
+        .page-container {
+            background: var(--white);
+            border-radius: var(--border-radius-card-organic);
+            overflow: hidden;
+            box-shadow: var(--shadow-pop);
             max-width: 1200px;
-            margin: 2.5em auto;
-            padding: 0 1.5em;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .button-style {
-            background-color: var(--accent-color);
-            color: var(--primary-color); /* Kontrastfarbe für Text */
-            padding: 1em 2.5em;
-            text-decoration: none;
-            border-radius: var(--border-radius-soft);
-            font-weight: 700;
-            font-size: 1.1em;
-            transition: all 0.3s ease-in-out; /* Übergang für Hover-Effekte */
-            box-shadow: var(--shadow-light);
-            display: inline-block; /* Für padding und margin korrekt */
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .button-style:hover {
-            background-color: #ffda6a; /* Hellerer Akzent bei Hover */
-            transform: translateY(-4px) scale(1.02); /* Leichter Lift und Skalierung */
-            box-shadow: var(--shadow-deep);
-        }
-
-        /* --- Header --- */
+        /* --- Header (Apple-like with playful touch) --- */
         header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
             color: var(--white);
-            padding: 2em 0;
+            padding: 2.5em 0;
             text-align: center;
-            box-shadow: var(--shadow-deep);
-            border-bottom-left-radius: var(--border-radius-soft);
-            border-bottom-right-radius: var(--border-radius-soft);
-            position: relative; /* Für animierte Elemente */
-            overflow: hidden; /* Wichtig für Wellen */
+            box-shadow: var(--shadow-pop);
+            border-bottom-left-radius: var(--border-radius-apple);
+            border-bottom-right-radius: var(--border-radius-apple);
+            position: relative;
+            overflow: hidden;
         }
 
         header h1 {
-            font-family: 'Pacifico', cursive; /* Verspielte Schriftart für den Titel */
-            font-size: 3.5em;
+            font-family: 'Pacifico', cursive; /* Playful font for the main title */
+            font-size: 3.8em;
             margin: 0;
             color: var(--white);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
             animation: fadeInScale 1s ease-out forwards;
         }
 
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-top: 10px;
-            opacity: 0; /* Für Animation */
+            opacity: 0;
             animation: fadeIn 1.2s ease-out 0.5s forwards;
+            font-weight: 300;
         }
 
-        /* Wellen-Animation im Header */
-        .wave {
+        /* Organic shape in header */
+        header::before {
+            content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23f0f2f5" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,245.3C384,235,480,181,576,149.3C672,117,768,107,864,128C960,149,1056,203,1152,229.3C1248,256,1344,256,1392,256L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
-            background-size: contain;
-            animation: wave 10s linear infinite alternate;
-        }
-        @keyframes wave {
-            0% { background-position-x: 0; }
-            100% { background-position-x: 1440px; }
+            bottom: -50px;
+            right: -50px;
+            width: 180px;
+            height: 180px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(40px);
+            animation: floatBlob 12s ease-in-out infinite alternate;
         }
 
-
-        /* --- Navigation --- */
+        /* --- Navigation (Clean Apple style) --- */
         nav {
             background-color: var(--white);
-            padding: 0.8em 0;
-            box-shadow: var(--shadow-light);
-            position: sticky; /* Sticky Navigation */
+            padding: 1em 0;
+            box-shadow: var(--shadow-subtle);
+            position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom-left-radius: var(--border-radius-soft);
-            border-bottom-right-radius: var(--border-radius-soft);
+            border-bottom-left-radius: var(--border-radius-apple);
+            border-bottom-right-radius: var(--border-radius-apple);
+            border-bottom: 1px solid var(--apple-gray-light);
         }
 
         nav ul {
@@ -133,145 +126,152 @@
         }
 
         nav ul li {
-            margin: 0 20px;
+            margin: 0 25px;
         }
 
         nav ul li a {
-            color: var(--primary-color);
+            color: var(--apple-text-dark);
             text-decoration: none;
-            font-weight: 600;
-            padding: 8px 15px;
+            font-weight: 500;
+            padding: 10px 15px;
             transition: all 0.3s ease;
-            border-radius: var(--border-radius-soft);
+            border-radius: var(--border-radius-apple);
             position: relative;
-            overflow: hidden; /* Für Unterstrich-Animation */
+            overflow: hidden;
         }
 
-        nav ul li a::before { /* Animierter Unterstrich */
+        nav ul li a::before { /* Underline effect */
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 3px;
-            background-color: var(--secondary-color);
-            transform: translateX(-100%);
+            background-color: var(--apple-blue);
+            transform: scaleX(0);
+            transform-origin: bottom center;
             transition: transform 0.3s ease-out;
         }
 
         nav ul li a:hover::before, nav ul li a.active::before {
-            transform: translateX(0);
+            transform: scaleX(1);
         }
 
         nav ul li a:hover, nav ul li a.active {
-            color: var(--secondary-color);
+            color: var(--apple-blue);
             transform: translateY(-2px);
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section (Apple-like clean with strong CTA) --- */
         .hero {
-            background: linear-gradient(to right, rgba(63, 81, 181, 0.9), rgba(103, 58, 183, 0.9)), url('https://via.placeholder.com/1500x500/3f51b5/ffffff?text=Modernes+Wohnen') no-repeat center center/cover;
-            color: var(--white);
+            background: var(--white); /* Clean white background */
+            color: var(--apple-text-dark);
             text-align: center;
-            padding: 6em 1em;
-            border-radius: var(--border-radius-card);
+            padding: 5em 1.5em;
+            border-radius: var(--border-radius-card-organic);
             margin-top: 2.5em;
-            box-shadow: var(--shadow-deep);
-            position: relative;
-            overflow: hidden;
+            box-shadow: var(--shadow-pop);
             animation: slideInFromTop 1s ease-out;
-        }
-
-        .hero::before { /* Overlay für Textlesbarkeit */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .hero * {
-            position: relative;
-            z-index: 2;
         }
 
         .hero h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 3.5em;
-            margin-bottom: 0.5em;
-            color: var(--white);
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+            margin-bottom: 0.6em;
+            color: var(--apple-text-dark);
+            letter-spacing: -0.03em; /* Tighten for Apple feel */
         }
 
         .hero p {
             font-size: 1.4em;
             max-width: 900px;
             margin: 0 auto 2.5em auto;
-            font-weight: 300;
+            font-weight: 400;
+            color: var(--apple-gray-text);
         }
 
-        .hero .button-group {
+        .button-group {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        .hero .button-group .button-style {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            border-radius: var(--border-radius-soft);
-            box-shadow: var(--shadow-deep);
-        }
-        .hero .button-group .button-style:hover {
-            background-color: #ffe082;
-            transform: translateY(-5px) scale(1.03);
+        /* --- Buttons (Apple-like with our accent) --- */
+        .button-apple-style {
+            background-color: var(--apple-blue);
+            color: var(--white);
+            padding: 1.2em 2.8em;
+            text-decoration: none;
+            border-radius: var(--border-radius-apple);
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(0,122,255,0.2);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
-        /* --- Section Styling --- */
-        .section {
+        .button-apple-style:hover {
+            background-color: #0084ff;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,122,255,0.3);
+        }
+
+        .button-apple-style.secondary {
+            background-color: var(--primary-accent); /* Use our primary accent for a secondary button */
+            box-shadow: 0 4px 15px rgba(63,81,181,0.2);
+        }
+        .button-apple-style.secondary:hover {
+            background-color: #5c6bc0;
+            box-shadow: 0 8px 25px rgba(63,81,181,0.3);
+        }
+
+
+        /* --- Section Styling (Clean, organized) --- */
+        .content-section {
             background-color: var(--white);
-            padding: 2.5em;
+            padding: 3em;
             margin-bottom: 2.5em;
-            border-radius: var(--border-radius-card); /* Stärker abgerundet */
-            box-shadow: var(--shadow-light);
-            transition: transform 0.3s ease-out;
+            border-radius: var(--border-radius-card-organic);
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            border: 1px solid var(--apple-gray-light); /* Subtle border for definition */
         }
 
-        .section:hover {
+        .content-section:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-deep);
+            box-shadow: var(--shadow-pop);
         }
 
-        .section h3 {
+        .content-section h3 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            font-size: 2.4em;
+            color: var(--apple-text-dark);
+            font-size: 2.6em;
             margin-top: 0;
             margin-bottom: 1em;
-            padding-bottom: 0.6em;
-            border-bottom: 3px solid var(--secondary-color); /* Kräftigere Unterlinie */
-            display: inline-block; /* Damit die Linie nur unter dem Text ist */
+            padding-bottom: 0.8em;
+            border-bottom: 2px solid var(--apple-gray-light);
+            display: inline-block;
             position: relative;
-            animation: fadeInRight 1s ease-out;
+            animation: fadeInRight 1s ease-out forwards;
+            letter-spacing: -0.02em;
         }
 
-        .section h3::after { /* Verspielter Punkt am Ende der Linie */
+        .content-section h3::after { /* Playful dot from previous design */
             content: '';
-            width: 15px;
-            height: 15px;
-            background-color: var(--accent-color);
+            width: 14px;
+            height: 14px;
+            background-color: var(--gold-accent);
             border-radius: 50%;
             position: absolute;
-            right: -25px;
-            bottom: -5px;
-            box-shadow: 0 0 8px var(--accent-color);
+            right: -20px;
+            bottom: -7px;
+            box-shadow: 0 0 8px var(--gold-accent);
         }
 
-        /* --- Feature Grid --- */
+        /* --- Feature Grid (Clean cards) --- */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -280,96 +280,97 @@
         }
 
         .feature-card {
-            background-color: var(--light-gray);
-            padding: 2em;
-            border-radius: var(--border-radius-card); /* Stark abgerundete Karten */
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            background-color: var(--apple-bg-light);
+            padding: 2.2em;
+            border-radius: var(--border-radius-apple);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--apple-gray-light);
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* For inner glow */
         }
 
-        .feature-card::before { /* Hintergrund-Kreis-Effekt bei Hover */
+        .feature-card::before { /* Inner glow effect */
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--apple-blue) 0%, transparent 70%);
             opacity: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            transform: scale(0);
+            transition: opacity 0.4s ease;
+            pointer-events: none; /* Allows clicks on content */
             z-index: 0;
         }
 
         .feature-card:hover::before {
-            opacity: 0.15;
-            transform: scale(1);
-        }
-
-        .feature-card * { /* Inhalte über dem Pseudo-Element halten */
-            position: relative;
-            z-index: 1;
+            opacity: 0.08;
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
         .feature-card .icon {
-            font-size: 4em; /* Größere Icons */
-            color: var(--secondary-color);
-            margin-bottom: 0.4em;
+            font-size: 4em;
+            color: var(--apple-blue); /* Apple blue for icons */
+            margin-bottom: 0.6em;
             transition: color 0.3s ease;
         }
 
         .feature-card:hover .icon {
-            color: var(--primary-color);
+            color: var(--primary-accent); /* Change to our primary accent on hover */
         }
 
         .feature-card h4 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
+            color: var(--apple-text-dark);
             margin-top: 0;
-            font-size: 1.5em;
+            font-size: 1.6em;
+            letter-spacing: -0.02em;
+        }
+        .feature-card p {
+            color: var(--apple-gray-text);
         }
 
-        /* --- CTA Banner --- */
+        /* --- CTA Banner (Prominent Apple-like call to action) --- */
         .cta-banner {
-            background: linear-gradient(45deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            background: linear-gradient(45deg, var(--apple-blue) 0%, var(--primary-accent) 100%);
             color: var(--white);
             padding: 4em 1.5em;
             text-align: center;
-            border-radius: var(--border-radius-card);
+            border-radius: var(--border-radius-card-organic);
             margin-bottom: 2.5em;
-            box-shadow: var(--shadow-deep);
+            box-shadow: var(--shadow-pop);
             position: relative;
             overflow: hidden;
             animation: fadeIn 1.5s ease-out;
         }
 
-        .cta-banner::before, .cta-banner::after { /* Hintergrund-Formen */
+        .cta-banner::before, .cta-banner::after { /* Organic shapes from previous design */
             content: '';
             position: absolute;
             border-radius: 50%;
             opacity: 0.1;
             background: var(--white);
+            filter: blur(20px);
         }
         .cta-banner::before {
-            width: 250px;
-            height: 250px;
-            top: -50px;
-            left: -50px;
+            width: 200px;
+            height: 200px;
+            top: -40px;
+            left: -40px;
+            animation: floatBlob 10s ease-in-out infinite alternate-reverse;
         }
         .cta-banner::after {
-            width: 300px;
-            height: 300px;
-            bottom: -80px;
-            right: -80px;
+            width: 250px;
+            height: 250px;
+            bottom: -60px;
+            right: -60px;
+            animation: floatBlob 14s ease-in-out infinite alternate;
         }
 
         .cta-banner * {
@@ -380,9 +381,9 @@
         .cta-banner h3 {
             color: var(--white);
             font-family: 'Montserrat', sans-serif;
-            font-size: 3em;
-            margin-bottom: 0.5em;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            font-size: 3.2em;
+            margin-bottom: 0.6em;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
         }
 
         .cta-banner p {
@@ -391,93 +392,105 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 300;
         }
 
-        .cta-banner .button-style {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
+        .cta-banner .button-apple-style {
+            background-color: var(--gold-accent);
+            color: var(--primary-accent); /* Text in primary accent for contrast */
             padding: 1.2em 3em;
             font-size: 1.3em;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(255,193,7,0.3);
         }
 
-        .cta-banner .button-style:hover {
+        .cta-banner .button-apple-style:hover {
             background-color: #ffe082;
             transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255,193,7,0.4);
         }
 
-        /* --- FAQ Section --- */
+        /* --- FAQ Section (Accordion style) --- */
         details {
             background-color: var(--white);
-            border: 1px solid #e0e0e0;
-            border-radius: var(--border-radius-soft);
+            border: 1px solid var(--apple-gray-light);
+            border-radius: var(--border-radius-apple);
             margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-subtle);
             transition: all 0.3s ease;
         }
 
         details:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-pop);
             transform: translateY(-2px);
         }
 
         summary {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            padding: 18px 25px;
+            padding: 20px 28px;
             cursor: pointer;
             outline: none;
-            color: var(--primary-color);
-            list-style: none; /* Entfernt den Standardpfeil */
+            color: var(--apple-text-dark);
+            list-style: none;
             position: relative;
+            font-size: 1.15em;
         }
 
-        summary::-webkit-details-marker { /* Entfernt Standardpfeil für Webkit */
+        summary::-webkit-details-marker {
             display: none;
         }
 
-        summary::after { /* Eigener Pfeil für Details */
-            content: '+';
+        summary::after { /* Apple-like chevron */
+            content: '\f078'; /* Font Awesome chevron-down */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             position: absolute;
-            right: 20px;
+            right: 25px;
             top: 50%;
             transform: translateY(-50%) rotate(0deg);
             transition: transform 0.3s ease;
-            font-size: 1.5em;
-            color: var(--secondary-color);
-            font-weight: normal;
+            font-size: 0.9em;
+            color: var(--apple-gray-text);
         }
 
         details[open] summary::after {
-            transform: translateY(-50%) rotate(45deg); /* Kreuz-Effekt bei Öffnen */
+            transform: translateY(-50%) rotate(180deg); /* Rotate on open */
+            color: var(--apple-blue);
         }
 
         details p {
-            padding: 10px 25px 20px 25px;
-            border-top: 1px solid #eee;
+            padding: 10px 28px 25px 28px;
+            border-top: 1px dashed var(--apple-gray-light); /* Dashed separator */
             margin: 0;
-            color: var(--dark-gray);
+            color: var(--apple-gray-text);
+            line-height: 1.7;
+            font-size: 1.05em;
         }
 
         /* --- Footer --- */
         footer {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: var(--apple-bg-light); /* Light Apple background for footer */
+            color: var(--apple-gray-text);
             text-align: center;
-            padding: 1.8em 0;
+            padding: 2em 0;
             margin-top: 3em;
-            border-top-left-radius: var(--border-radius-soft);
-            border-top-right-radius: var(--border-radius-soft);
-            box-shadow: var(--shadow-deep);
+            border-top-left-radius: var(--border-radius-apple);
+            border-top-right-radius: var(--border-radius-apple);
+            box-shadow: var(--shadow-subtle);
+            border-top: 1px solid var(--apple-gray-light);
         }
 
+        footer nav ul {
+            margin-bottom: 1em;
+        }
         footer nav ul li a {
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--apple-gray-text);
             font-weight: 400;
+            font-size: 0.95em;
         }
         footer nav ul li a:hover {
-            color: var(--white);
-            border-bottom: 2px solid var(--accent-color);
+            color: var(--apple-text-dark);
+            border-bottom: 2px solid var(--apple-blue);
             transform: translateY(-1px);
         }
 
@@ -502,175 +515,199 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, 15px) rotate(10deg); }
+            50% { transform: translate(0, 30px) rotate(0deg); }
+            75% { transform: translate(-20px, 15px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
         /* --- Media Queries for Responsiveness --- */
         @media (max-width: 992px) {
             header h1 { font-size: 3em; }
             .hero h2 { font-size: 2.8em; }
             .hero p { font-size: 1.2em; }
-            .section h3 { font-size: 2em; }
-            .cta-banner h3 { font-size: 2.5em; }
+            .content-section h3 { font-size: 2.2em; }
+            .cta-banner h3 { font-size: 2.8em; }
             .feature-card .icon { font-size: 3.5em; }
         }
 
         @media (max-width: 768px) {
+            body { padding: 15px; }
+            .page-container { padding: 0; }
+            header { padding: 2em 0; }
             header h1 { font-size: 2.5em; }
+            .hero { padding: 4em 1em; margin-top: 1.5em; }
+            .hero h2 { font-size: 2.2em; }
+            .hero p { font-size: 1em; margin-bottom: 2em; }
+            .button-group { flex-direction: column; gap: 15px; }
+            .button-apple-style { width: 90%; max-width: 350px; padding: 1em 2em; font-size: 1em; }
             nav ul { flex-direction: column; align-items: center; }
             nav ul li { margin: 8px 0; }
-            .hero { padding: 4em 1em; }
-            .hero h2 { font-size: 2.2em; }
-            .hero p { font-size: 1em; }
-            .button-group { flex-direction: column; }
-            .button-style { width: 90%; max-width: 300px; }
-            .section { padding: 1.8em; }
-            .section h3 { font-size: 1.8em; }
-            .feature-grid { grid-template-columns: 1fr; }
-            .cta-banner { padding: 3em 1em; }
-            .cta-banner h3 { font-size: 2em; }
+            .content-section { padding: 2.2em; margin-bottom: 1.8em; }
+            .content-section h3 { font-size: 1.8em; padding-bottom: 0.5em; }
+            .content-section h3::after { right: -15px; bottom: -5px; width: 12px; height: 12px; }
+            .feature-grid { grid-template-columns: 1fr; gap: 1.8em; }
+            .feature-card { padding: 1.8em; }
+            .feature-card h4 { font-size: 1.4em; }
+            .cta-banner { padding: 3em 1em; margin-bottom: 1.8em; }
+            .cta-banner h3 { font-size: 2.2em; }
             .cta-banner p { font-size: 1.1em; }
+            .cta-banner .button-apple-style { padding: 1em 2.5em; font-size: 1.1em; }
+            summary { padding: 16px 20px; font-size: 1em; }
+            summary::after { right: 20px; font-size: 0.8em; }
+            details p { padding: 8px 20px 20px 20px; font-size: 0.95em; }
+            footer { padding: 1.5em 0; margin-top: 2em; }
         }
 
         @media (max-width: 480px) {
             header h1 { font-size: 2em; }
             .hero h2 { font-size: 1.8em; }
             .hero p { font-size: 0.9em; }
-            .section h3 { font-size: 1.5em; }
-            .feature-card { padding: 1.5em; }
-            .feature-card h4 { font-size: 1.2em; }
+            .content-section h3 { font-size: 1.5em; }
+            .feature-card .icon { font-size: 3em; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Mietpreisbremse Verstehen</h1>
-        <p>Fair Wohnen in Deutschland – Ihre Rechte und Pflichten</p>
-        <div class="wave"></div> </header>
+    <div class="page-container">
+        <header>
+            <h1>Mietpreisbremse Verstehen</h1>
+            <p>Ihre Rechte für faires Wohnen</p>
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="#home" class="active">Start</a></li>
-            <li><a href="#mieter">Für Mieter</a></li>
-            <li><a href="#vermieter">Für Vermieter</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#kontakt">Kontakt & Beratung</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="home" class="hero">
-            <h2>Ihre Miete ist zu hoch? Wir helfen Ihnen!</h2>
-            <p>Die Mietpreisbremse soll überzogene Mietpreise in angespannten Wohnungsmärkten eindämmen und bezahlbares Wohnen sichern. Erfahren Sie hier, wie sie funktioniert und wie Sie Ihre Rechte wahrnehmen können.</p>
-            <div class="button-group">
-                <a href="#mieter" class="button-style">Ich bin Mieter</a>
-                <a href="#vermieter" class="button-style">Ich bin Vermieter</a>
-            </div>
-        </section>
-
-        <div class="container">
-            <section class="section">
-                <h3>Was ist die Mietpreisbremse?</h3>
-                <p>Die Mietpreisbremse, offiziell als "Mietrechtsnovellierungsgesetz" bekannt, ist eine gesetzliche Regelung, die in bestimmten Regionen Deutschlands die Höhe der Miete bei Neuvermietungen begrenzt. Ihr Ziel ist es, den Anstieg der Mieten in angespannten Wohnungsmärkten zu dämpfen und Wohnen für alle bezahlbar zu halten.</p>
-                <p>Sie besagt, dass die Miete bei einer Neuvermietung höchstens <strong>10 Prozent über der ortsüblichen Vergleichsmiete</strong> liegen darf. Es gibt jedoch wichtige Ausnahmen, die Sie kennen sollten.</p>
-
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="icon">🏠</div>
-                        <h4>Ortsübliche Vergleichsmiete</h4>
-                        <p>Grundlage ist der lokale Mietspiegel oder Vergleichsmieten. Wir zeigen Ihnen, wie Sie diese finden.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">⚖️</div>
-                        <h4>Gesetzliche Regelung</h4>
-                        <p>Ein wichtiges Instrument des Sozialstaats zum Schutz von Mietern in Ballungsgebieten.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">📍</div>
-                        <h4>Geltungsbereich</h4>
-                        <p>Gilt nur in von den Bundesländern ausgewiesenen Gebieten mit angespanntem Wohnungsmarkt.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">⚠️</div>
-                        <h4>Wichtige Ausnahmen</h4>
-                        <p>Neubau, umfassende Modernisierung oder eine bereits höhere Vormiete können Ausnahmen darstellen.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="mieter" class="section">
-                <h3>Für Mieter: Ihre Miete überprüfen und handeln</h3>
-                <p>Fühlen Sie sich von zu hohen Mietforderungen betroffen? Hier erfahren Sie, wie Sie vorgehen können:</p>
-                <ul>
-                    <li><strong>Mieten-Check:</strong> Nutzen Sie unseren interaktiven Rechner (bald verfügbar!), um eine erste Einschätzung zu erhalten, ob Ihre Miete zu hoch ist.</li>
-                    <li><strong>Ortsübliche Vergleichsmiete ermitteln:</strong> Erfahren Sie, wo Sie den aktuellen Mietspiegel Ihrer Stadt finden oder wie Sie Vergleichsmieten recherchieren können.</li>
-                    <li><strong>Auskunftsrecht nutzen:</strong> Fordern Sie bei Ihrem Vermieter Auskunft über die Vormiete oder Modernisierungen.</li>
-                    <li><strong>Miete rügen:</strong> Erfahren Sie, wie Sie eine qualifizierte Rüge nach § 556g BGB formulieren und Ihre Ansprüche geltend machen. Wir stellen Ihnen Musterbriefe zur Verfügung.</li>
-                    <li><strong>Hilfe suchen:</strong> Mietervereine und spezialisierte Anwälte können Sie unterstützen. Wir listen Beratungsstellen in Ihrer Nähe auf.</li>
-                </ul>
-                <div style="text-align: center; margin-top: 2em;">
-                    <a href="#kontakt" class="button-style" style="background-color: var(--primary-color); color: var(--white);">Jetzt Beratung finden</a>
-                </div>
-            </section>
-
-            <section id="vermieter" class="section">
-                <h3>Für Vermieter: Die Mietpreisbremse korrekt anwenden</h3>
-                <p>Vermieter haben eine hohe Verantwortung. Eine korrekte Anwendung der Mietpreisbremse schützt vor Rechtsstreitigkeiten und fördert ein faires Mietverhältnis:</p>
-                <ul>
-                    <li><strong>Geltungsbereich prüfen:</strong> Stellen Sie sicher, ob die Mietpreisbremse in Ihrer Stadt oder Gemeinde gilt.</li>
-                    <li><strong>Ortsübliche Vergleichsmiete ermitteln:</strong> Lernen Sie, wie Sie rechtssicher die ortsübliche Vergleichsmiete bestimmen.</li>
-                    <li><strong>Ausnahmen korrekt anwenden:</strong> Detaillierte Informationen zu den Ausnahmen (Neubau, umfassende Modernisierung, Vormiete) und den erforderlichen Nachweisen.</li>
-                    <li><strong>Auskunftspflicht beachten:</strong> Erfahren Sie, welche Informationen Sie Mietinteressenten vor Vertragsabschluss unaufgefordert mitteilen müssen.</li>
-                    <li><strong>Rechtssichere Mietverträge:</strong> Tipps zur Gestaltung von Mietverträgen, die den Anforderungen der Mietpreisbremse entsprechen.</li>
-                </ul>
-                <div style="text-align: center; margin-top: 2em;">
-                    <a href="#faq" class="button-style" style="background-color: var(--primary-color); color: var(--white);">Häufige Fragen für Vermieter</a>
-                </div>
-            </section>
-
-            <section id="faq" class="section">
-                <h3>Häufig gestellte Fragen (FAQ)</h3>
-                <p>Hier finden Sie Antworten auf die wichtigsten Fragen zur Mietpreisbremse. Klicken Sie auf die Fragen, um die Antworten zu sehen.</p>
-                <details>
-                    <summary>Was ist die ortsübliche Vergleichsmiete?</summary>
-                    <p>Die ortsübliche Vergleichsmiete ist der Durchschnitt der Mieten, die in den letzten vier Jahren für Wohnungen vergleichbarer Art, Größe, Ausstattung, Beschaffenheit und Lage gezahlt wurden. Sie wird oft durch einen qualifizierten Mietspiegel ermittelt.</p>
-                </details>
-                <details>
-                    <summary>Wo gilt die Mietpreisbremse?</summary>
-                    <p>Die Mietpreisbremse gilt nur in Regionen, die von den jeweiligen Bundesländern als Gebiete mit angespannten Wohnungsmärkten ausgewiesen wurden. Dies sind in der Regel Großstädte und Ballungsgebiete. Eine genaue Liste finden Sie auf den Webseiten der Landesregierungen oder der Städte.</p>
-                </details>
-                <details>
-                    <summary>Was sind die Ausnahmen von der Mietpreisbremse?</summary>
-                    <p>Wesentliche Ausnahmen sind: Neubauten, die nach dem 1. Oktober 2014 erstmals vermietet wurden; Wohnungen, die nach einer umfassenden Modernisierung erstmals wiedervermietet werden; und Fälle, in denen die Vormiete bereits höher war (Bestandsschutz).</p>
-                </details>
-                <details>
-                    <summary>Wie rüge ich eine zu hohe Miete?</summary>
-                    <p>Die Rüge muss schriftlich erfolgen und klar darlegen, dass die Miete gegen die Mietpreisbremse verstößt. Sie sollten darin die Gründe nennen (z.B. Überschreitung des Mietspiegels) und den Vermieter zur Reduzierung auffordern. Es gibt keine spezifische Frist, aber je früher, desto besser.</p>
-                </details>
-                <details>
-                    <summary>Kann ich zu viel gezahlte Miete zurückfordern?</summary>
-                    <p>Ja, in der Regel können Sie die zu viel gezahlte Miete ab dem Zeitpunkt zurückfordern, zu dem Sie die Rüge wirksam an den Vermieter geschickt haben. Für die Zeit davor ist eine Rückforderung normalerweise nicht möglich.</p>
-                </details>
-            </section>
-
-            <section id="kontakt" class="cta-banner">
-                <h3>Sie brauchen persönliche Unterstützung?</h3>
-                <p>Egal, ob Mieter oder Vermieter – manchmal ist eine individuelle Beratung unerlässlich. Wir helfen Ihnen, die richtigen Ansprechpartner zu finden.</p>
-                <a href="mailto:info@mietpreisbremse-verstehen.de" class="button-style">Jetzt Kontakt aufnehmen</a>
-                <p style="margin-top: 1.5em; font-size: 1.1em; opacity: 0.9;">Oder finden Sie Beratungsstellen in Ihrer Nähe:</p>
-                <a href="#" class="button-style" style="background-color: var(--white); color: var(--secondary-color);">Beratungsstellen finden (bald verfügbar)</a>
-            </section>
-        </div>
-    </main>
-
-    <footer>
         <nav>
             <ul>
-                <li><a href="#">Impressum</a></li>
-                <li><a href="#">Datenschutz</a></li>
-                <li><a href="#">Sitemap</a></li>
+                <li><a href="#home" class="active">Start</a></li>
+                <li><a href="#mieter">Für Mieter</a></li>
+                <li><a href="#vermieter">Für Vermieter</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#kontakt">Beratung</a></li>
             </ul>
         </nav>
-        <p>&copy; 2025 Mietpreisbremse Verstehen. Alle Rechte vorbehalten.</p>
-    </footer>
+
+        <main>
+            <section id="home" class="hero">
+                <h2>Transparenz schafft Vertrauen.</h2>
+                <p>Die Mietpreisbremse ist ein wichtiges Instrument für bezahlbaren Wohnraum. Verstehen Sie Ihre Möglichkeiten und schützen Sie sich vor überzogenen Mieten.</p>
+                <div class="button-group">
+                    <a href="#mieter" class="button-apple-style">Mieter-Check starten</a>
+                    <a href="#vermieter" class="button-apple-style secondary">Vermieter-Leitfaden</a>
+                </div>
+            </section>
+
+            <div class="container-content"> <section class="content-section">
+                    <h3>Was ist die Mietpreisbremse?</h3>
+                    <p>Die Mietpreisbremse, offiziell bekannt als das "Mietrechtsnovellierungsgesetz", ist eine gesetzliche Regelung in Deutschland, die die Höhe der Miete bei Neuvermietungen in bestimmten Gebieten begrenzt. Ihr primäres Ziel ist es, den rapiden Anstieg der Mietpreise in angespannten Wohnungsmärkten einzudämmen und so das Wohnen für alle zugänglicher zu machen.</p>
+                    <p>Konkret bedeutet dies, dass die Miete bei einer Neuvermietung nicht mehr als <strong>10 Prozent über der ortsüblichen Vergleichsmiete</strong> liegen darf. Es gibt jedoch spezifische Ausnahmen, die Sie als Mieter oder Vermieter kennen sollten.</p>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="icon"><i class="fas fa-home"></i></div>
+                            <h4>Ortsübliche Miete</h4>
+                            <p>Ermittlung basierend auf Mietspiegeln und vergleichbaren Wohnungen.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon"><i class="fas fa-gavel"></i></div>
+                            <h4>Rechtlicher Schutz</h4>
+                            <p>Ein zentrales Element zur Sicherung fairer Wohnkosten in Ballungsgebieten.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <h4>Geltungsbereich</h4>
+                            <p>Gilt nur in von den Bundesländern ausgewiesenen Regionen mit angespanntem Wohnungsmarkt.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <h4>Ausnahmen</h4>
+                            <p>Neubau, Modernisierung oder höhere Vormiete können von der Regelung abweichen.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="mieter" class="content-section">
+                    <h3>Für Mieter: Ihre Rechte prüfen</h3>
+                    <p>Fühlen Sie sich von überhöhten Mietforderungen betroffen? Hier erfahren Sie, wie Sie Ihre Situation überprüfen und aktiv werden können:</p>
+                    <ul>
+                        <li><strong>Mietcheck-Assistent:</strong> Nutzen Sie unser intuitives Tool (bald verfügbar!), um eine erste Einschätzung zu erhalten, ob Ihre aktuelle Miete angemessen ist.</li>
+                        <li><strong>Vergleichsmiete ermitteln:</strong> Erfahren Sie, wie und wo Sie den aktuellen Mietspiegel Ihrer Stadt finden oder detaillierte Vergleichsmieten recherchieren.</li>
+                        <li><strong>Auskunftsrecht nutzen:</strong> Fordern Sie transparent Informationen über die Vormiete oder durchgeführte Modernisierungen von Ihrem Vermieter an.</li>
+                        <li><strong>Mietrüge formulieren:</strong> Wir bieten Ihnen Musterbriefe und Anleitungen, wie Sie eine qualifizierte Rüge nach § 556g BGB rechtssicher formulieren können.</li>
+                        <li><strong>Professionelle Unterstützung:</strong> Finden Sie Mietervereine und spezialisierte Rechtsanwälte in Ihrer Nähe, die Sie bei der Durchsetzung Ihrer Rechte beraten.</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 2.5em;">
+                        <a href="#kontakt" class="button-apple-style secondary">Jetzt unverbindlich beraten lassen</a>
+                    </div>
+                </section>
+
+                <section id="vermieter" class="content-section">
+                    <h3>Für Vermieter: Compliance und Sicherheit</h3>
+                    <p>Als Vermieter tragen Sie Verantwortung für die korrekte Anwendung der Mietpreisbremse. Eine präzise Umsetzung schützt Sie vor rechtlichen Auseinandersetzungen und fördert ein vertrauensvolles Mietverhältnis:</p>
+                    <ul>
+                        <li><strong>Geltungsbereich prüfen:</strong> Überprüfen Sie, ob Ihre Immobilie in einer Region liegt, in der die Mietpreisbremse Anwendung findet.</li>
+                        <li><strong>Ortsübliche Miete korrekt bestimmen:</strong> Lernen Sie die Methoden und Quellen kennen, um die ortsübliche Vergleichsmiete rechtssicher zu ermitteln.</li>
+                        <li><strong>Ausnahmen detailliert anwenden:</strong> Umfassende Erläuterungen zu den Ausnahmetatbeständen (Neubau, umfassende Modernisierung, Vormiete) und den erforderlichen Dokumentationen.</li>
+                        <li><strong>Auskunftspflicht erfüllen:</strong> Informationen darüber, welche Details Sie Mietinteressenten bereits vor Vertragsabschluss unaufgefordert mitteilen müssen.</li>
+                        <li><strong>Rechtssichere Mietverträge:</strong> Empfehlungen zur Gestaltung von Mietverträgen, die den aktuellen Anforderungen der Mietpreisbremse entsprechen.</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 2.5em;">
+                        <a href="#faq" class="button-apple-style">Häufige Fragen für Vermieter</a>
+                    </div>
+                </section>
+
+                <section id="faq" class="content-section">
+                    <h3>Häufig gestellte Fragen</h3>
+                    <p>Hier finden Sie präzise Antworten auf die wichtigsten Fragen zur Mietpreisbremse. Klicken Sie auf die Fragen, um detaillierte Informationen zu erhalten.</p>
+                    <details>
+                        <summary>Was ist die ortsübliche Vergleichsmiete?</summary>
+                        <p>Die ortsübliche Vergleichsmiete beschreibt den Durchschnitt der Mieten, die in den letzten vier Jahren für Wohnungen gleicher Art, Größe, Ausstattung, Beschaffenheit und Lage in einer Gemeinde oder einem vergleichbaren Stadtteil gezahlt wurden. Sie wird meist durch einen qualifizierten Mietspiegel oder durch Auskunft aus einer Mietdatenbank ermittelt.</p>
+                    </details>
+                    <details>
+                        <summary>Wo genau gilt die Mietpreisbremse in Deutschland?</summary>
+                        <p>Die Mietpreisbremse ist nicht bundesweit gültig. Sie gilt ausschließlich in Regionen, die von den einzelnen Bundesländern als Gebiete mit angespannten Wohnungsmärkten deklariert wurden. Dies betrifft typischerweise Großstädte und dicht besiedelte Ballungszentren. Eine genaue Übersicht finden Sie auf den offiziellen Webseiten der jeweiligen Landesregierungen oder Städte.</p>
+                    </details>
+                    <details>
+                        <summary>Welche Ausnahmen gibt es von der Mietpreisbremse?</summary>
+                        <p>Die wichtigsten Ausnahmetatbestände sind: 1. Neubauten, die nach dem 1. Oktober 2014 erstmals vermietet wurden. 2. Wohnungen, die nach einer umfassenden Modernisierung (die einen wesentlichen Wohnwertgewinn darstellt) erstmals wiedervermietet werden. 3. Wenn die Miete des Vormieters bereits höher war als die durch die Mietpreisbremse zulässige Miete (Bestandsschutz).</p>
+                    </details>
+                    <details>
+                        <summary>Wie muss ich eine zu hohe Miete formell rügen?</summary>
+                        <p>Die Rüge einer überhöhten Miete muss schriftlich erfolgen und den Verstoß gegen die Mietpreisbremse klar darlegen. Sie sollten darin die genauen Gründe für die Annahme einer zu hohen Miete nennen (z.B. Bezug auf den Mietspiegel) und Ihren Vermieter zur Herabsetzung der Miete auffordern. Eine spezifische Frist zur Rüge gibt es nicht, jedoch ist eine zeitnahe Rüge empfehlenswert, da die Rückforderung zu viel gezahlter Miete erst ab dem Zeitpunkt der Rüge möglich ist.</p>
+                    </details>
+                    <details>
+                        <summary>Kann ich bereits zu viel gezahlte Miete zurückfordern?</summary>
+                        <p>Ja, eine Rückforderung der zu viel gezahlten Miete ist grundsätzlich möglich, jedoch erst ab dem Zeitpunkt, zu dem Ihre formelle Rüge der Miete wirksam beim Vermieter eingegangen ist. Für die vor diesem Zeitpunkt gezahlten Beträge besteht in der Regel kein Anspruch auf Rückzahlung.</p>
+                    </details>
+                </section>
+
+                <section id="kontakt" class="cta-banner">
+                    <h3>Benötigen Sie persönliche Unterstützung?</h3>
+                    <p>Ob Sie Mieter oder Vermieter sind – bei komplexen Fragen ist eine individuelle und qualifizierte Beratung oft unerlässlich. Wir verbinden Sie mit den passenden Ansprechpartnern.</p>
+                    <a href="mailto:info@mietpreisbremse-verstehen.de" class="button-apple-style">Jetzt eine Anfrage senden</a>
+                    <p style="margin-top: 1.8em; font-size: 1.1em; opacity: 0.9; font-weight: 300;">Oder finden Sie qualifizierte Beratungsstellen in Ihrer Nähe:</p>
+                    <a href="#" class="button-apple-style" style="background-color: var(--white); color: var(--apple-blue);">Beratungsstellen-Finder (bald verfügbar)</a>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 Mietpreisbremse Verstehen. Eine Initiative für faires Wohnen.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
